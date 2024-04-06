@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        .login-container {
+            width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 100px;
+        }
+
+        .login-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .login-container input[type="text"],
+        .login-container input[type="password"],
+        .login-container select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .login-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .login-container button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <select id="userType">
+                <option value="foodProvider">Food Provider</option>
+                <option value="foodReceiver">Food Receiver</option>
+                <option value="deliveryAgent">Delivery Agent</option>
+            </select>
+            <input type="text" id="username" placeholder="Username">
+            <input type="password" id="password" placeholder="Password">
+            <button type="button" onclick="login()">Login</button>
+        </form>
+    </div>
+
+    <script>
+        function login() {
+            // Retrieve values from the form
+            var userType = document.getElementById('userType').value;
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+
+            // Perform login validation (you may replace this with your actual authentication logic)
+            // For simplicity, let's assume the username and password are correct
+            alert('Login successful! User Type: ' + userType + ', Username: ' + username);
+
+            // Redirect to the respective dashboard based on the user type
+            switch (userType) {
+                case 'foodProvider':
+                    // Redirect to the food provider dashboard
+                    window.location.href = 'https://udhaya019.github.io/food-request/food%20provider/Untitled-2.html';
+                    break;
+                case 'foodReceiver':
+                    // Redirect to the food receiver dashboard
+                    window.location.href = '/food-receiver-dashboard';
+                    break;
+                case 'deliveryAgent':
+                    // Redirect to the deliveryagent dashboard
+                    window.location.href = '/delivery-agent-dashboard';
+                    break;
+                default:
+                    // Redirect to a default dashboard or handle the case as needed
+                    window.location.href = '/default-dashboard';
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>
+ 
